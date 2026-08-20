@@ -1,0 +1,32 @@
+table {
+  width: 100%;
+  margin-top: 15px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+th {
+  background: #eee;
+}
+
+td button {
+  cursor: pointer;
+  font-size: 15px;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  color: white;
+}
+#deleteBtn {
+  background-color: red;
+}
+
+#updateBtn {
+  background-color: blue;
+  margin-right: 10px;
+}

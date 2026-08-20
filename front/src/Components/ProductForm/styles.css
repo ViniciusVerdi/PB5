@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.productForm {
+  max-width: 420px;
+  margin: 30px auto;
+  padding: 15px;
+  background: whitesmoke;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+.productForm h2 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.productForm label {
+  font-size: 14px;
+}
+
+.productForm input {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.productForm .pfButton {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.productForm .pfButton:hover {
+  background: rgb(13, 1, 180);
+}

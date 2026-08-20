@@ -1,0 +1,69 @@
+services:
+  catalog-db:
+    image: postgres:16-alpine
+    container_name: catalog-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: catalog_db
+      POSTGRES_USER: catalog
+      POSTGRES_PASSWORD: catalog123
+    ports:
+      - "5433:5432"
+    volumes:
+      - catalog-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U catalog -d catalog_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ms-network
+
+  inventory-db:
+    image: postgres:16-alpine
+    container_name: inventory-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: inventory_db
+      POSTGRES_USER: inventory
+      POSTGRES_PASSWORD: inventory123
+    ports:
+      - "5434:5432"
+    volumes:
+      - inventory-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U inventory -d inventory_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ms-network
+
+  history-db:
+    image: postgres:16-alpine
+    container_name: history-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: history_db
+      POSTGRES_USER: history
+      POSTGRES_PASSWORD: history123
+    ports:
+      - "5435:5432"
+    volumes:
+      - history-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U history -d history_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ms-network
+
+volumes:
+  catalog-db-data:
+  inventory-db-data:
+  history-db-data:
+
+networks:
+  ms-network:
+    driver: bridge
