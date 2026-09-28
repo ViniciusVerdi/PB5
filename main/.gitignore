@@ -1,4 +1,3 @@
-# ---- IDE ----
 .idea/
 .vscode/
 *.iml
@@ -9,15 +8,12 @@
 .settings/
 bin/
 
-# ---- Build ----
 target/
 build/
 out/
 
-# ---- SO ----
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# ---- Logs ----
 *.log
