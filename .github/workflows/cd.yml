@@ -2,16 +2,16 @@ name: CD
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     tags:
-      - 'v*'
+      - "v*"
 
 jobs:
   docker:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        service: [ eureka-server, catalog, inventory, history, apigateway ]
+        service: [eureka-server, catalog, inventory, history, apigateway]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,7 +29,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: ./${{ matrix.service }}
+          context: ./main/${{ matrix.service }}
           push: true
           tags: |
             ghcr.io/${{ github.repository }}/${{ matrix.service }}:latest
