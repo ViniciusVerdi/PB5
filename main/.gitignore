@@ -10,7 +10,7 @@ bin/
 
 target/
 build/
-out/
+/out/
 
 .DS_Store
 Thumbs.db
